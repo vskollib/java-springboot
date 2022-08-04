@@ -1,6 +1,6 @@
-package com.example.cantoncoders;
+package com.example.bermtec;
 
-import com.example.cantoncoders.GreetingController;
+// import com.example.bermtec.GreetingController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,8 @@ public class GreetingControllerTest {
     @Test
     public void givenName_thenGreetingWithName() throws Exception {
 
-        String gettingTo = "CantonCoders";
-        String expectGreetingMessage = "Hello, CantonCoders";
+        String gettingTo = "bermtec";
+        String expectGreetingMessage = "Hello, bermtec";
 
         this.mockMvc.perform(get("/greeting").param("name", gettingTo))
             .andExpect(status().isOk())

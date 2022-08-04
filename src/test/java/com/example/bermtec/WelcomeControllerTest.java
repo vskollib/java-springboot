@@ -1,6 +1,6 @@
-package com.example.cantoncoders;
+package com.example.bermtec;
 
-import com.example.cantoncoders.WelcomeController;
+// import com.example.bermtec.WelcomeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
