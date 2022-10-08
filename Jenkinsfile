@@ -11,11 +11,6 @@ pipeline {
                 echo 'Test'
             }
         }
-        stage('Sonarqube') {
-            steps {
-                echo 'Sonarqube'
-            }
-        }
         stage('Push to artifactory') {
             steps {
                 echo 'Push to artifactory'
@@ -42,9 +37,6 @@ pipeline {
       }
       aborted {
         echo 'aborted'
-      }
-      always {
-        echo 'always'
       }
     }
 }
