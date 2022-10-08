@@ -4,28 +4,28 @@ pipeline {
     
     // collection of stages
     stages{
-        stage('Quality Dpt'){
+        stage('Test'){
             steps{
-                sh 'mvn test -B'
+                sh 'mvn test'
             }
         }
-        stage('Package '){
+        stage('Package'){
             steps{
-                sh 'mvn clean package -B -Dmaven.test.skip=true'
+                sh 'mvn clean package -Dmaven.test.skip=true'
             }
         }
         stage('Deploy war'){
             steps{
-                sh 'cp target/bermtec-0.0.1.war /var/lib/tomcat8/webapps/bermtec-0.0.1.war'
+                echo 'Deploy'
             }
         }
     }
     post{
         failure{
-            echo 'You failed'
+            echo 'Build failed'
         }
         success{
-            echo 'You are Yoda'
+            echo 'Build Success'
         }
     }
 }
