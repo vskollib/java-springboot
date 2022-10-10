@@ -1,31 +1,18 @@
 pipeline {
-    // where or who
-    agent any
-    
-    // collection of stages
-    stages{
-        stage('Test'){
-            steps{
-                sh 'mvn test'
+    agent any 
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building'             
             }
         }
-        stage('Package'){
-            steps{
-                sh 'mvn clean package -Dmaven.test.skip=true'
+        stage('Test') {
+            steps {
+                echo 'Testing'
             }
         }
-        stage('Deploy war'){
-            steps{
-                echo 'Deploy'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
             }
         }
-    }
-    post{
-        failure{
-            echo 'Build failed'
-        }
-        success{
-            echo 'Build Success'
-        }
-    }
-}
